@@ -10,9 +10,10 @@ public class UniqueFinder {
         }
         List<Character> result = new ArrayList<>();
         for (Character item : input.toCharArray()) {
-            if(!result.contains(item)){
+            if (!result.contains(item)) {
                 result.add(item);
             }
-        }return result;
+        }
+        return result;
     }
 }
