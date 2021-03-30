@@ -14,7 +14,7 @@ import java.sql.Statement;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HouseCupTest {
-/*
+
     private MariaDbDataSource dataSource;
 
     private HouseCup houseCup;
@@ -41,7 +41,6 @@ class HouseCupTest {
     void test_get_points_of_house_one() throws SQLException {
         assertEquals(5, houseCup.getPointsOfHouse("Slytherin"));
     }
-
 
 
     @AfterEach
@@ -85,5 +84,5 @@ class HouseCupTest {
         }
 
     }
-*/
+
 }
