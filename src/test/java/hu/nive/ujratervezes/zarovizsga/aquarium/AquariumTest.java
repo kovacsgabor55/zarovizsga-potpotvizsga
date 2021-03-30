@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AquariumTest {
 
-    private Aquarium aquarium;
+/*    private Aquarium aquarium;
 
     @BeforeEach
     void init() {
@@ -134,5 +134,5 @@ class AquariumTest {
     }
 
 
-
+*/
 }

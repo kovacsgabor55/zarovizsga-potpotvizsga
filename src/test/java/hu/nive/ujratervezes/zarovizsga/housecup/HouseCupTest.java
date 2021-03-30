@@ -14,7 +14,7 @@ import java.sql.Statement;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HouseCupTest {
-
+/*
     private MariaDbDataSource dataSource;
 
     private HouseCup houseCup;
@@ -85,5 +85,5 @@ class HouseCupTest {
         }
 
     }
-
+*/
 }
