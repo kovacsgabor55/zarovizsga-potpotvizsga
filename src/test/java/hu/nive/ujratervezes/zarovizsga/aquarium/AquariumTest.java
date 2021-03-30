@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AquariumTest {
 
-/*    private Aquarium aquarium;
+    private Aquarium aquarium;
 
     @BeforeEach
     void init() {
@@ -20,7 +20,7 @@ class AquariumTest {
     }
 
     @Test
-    void test_addFish_getOneFish_addOneClownfish () {
+    void test_addFish_getOneFish_addOneClownfish() {
         Clownfish clownfish = new Clownfish("Nemo", 5, "orange-white");
         aquarium.addFish(clownfish);
         assertEquals(1, aquarium.getStatus().size());
@@ -134,5 +134,4 @@ class AquariumTest {
     }
 
 
-*/
 }
