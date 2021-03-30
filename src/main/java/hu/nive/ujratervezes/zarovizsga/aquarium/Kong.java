@@ -1,9 +1,9 @@
 package hu.nive.ujratervezes.zarovizsga.aquarium;
 
 public class Kong implements Fish {
-    private String name;
+    private final String name;
     private int weight;
-    private String color;
+    private final String color;
 
     public Kong(String name, int weight, String color) {
         this.name = name;

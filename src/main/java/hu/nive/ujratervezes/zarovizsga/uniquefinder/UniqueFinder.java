@@ -6,7 +6,7 @@ import java.util.List;
 public class UniqueFinder {
     public List<Character> uniqueChars(String input) {
         if (input == null) {
-            throw new IllegalArgumentException("");
+            throw new IllegalArgumentException("Input value cannot be null.");
         }
         List<Character> result = new ArrayList<>();
         for (Character item : input.toCharArray()) {
