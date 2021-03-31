@@ -1,6 +1,7 @@
 package hu.nive.ujratervezes.zarovizsga.aquarium;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Aquarium {
@@ -17,13 +18,13 @@ public class Aquarium {
     }
 
     public void removeFish() {
-        List<Fish> remove = new ArrayList<>();
-        for (Fish item : fishList) {
+        Iterator<Fish> iterator = fishList.iterator();
+        while ((iterator.hasNext())) {
+            Fish item = iterator.next();
             if (item.getWeight() >= 11) {
-                remove.add(item);
+                iterator.remove();
             }
         }
-        fishList.removeAll(remove);
     }
 
     public List<String> getStatus() {

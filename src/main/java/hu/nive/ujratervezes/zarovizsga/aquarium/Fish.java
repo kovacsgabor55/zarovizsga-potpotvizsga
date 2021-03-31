@@ -1,16 +1,41 @@
 package hu.nive.ujratervezes.zarovizsga.aquarium;
 
-public interface Fish {
+public abstract class Fish {
+    private final String name;
+    private int weight;
+    private final String color;
+    private final boolean shortThereMemory;
 
-    String getName();
+    public Fish(String name, int weight, String color, boolean shortThereMemory) {
+        this.name = name;
+        this.weight = weight;
+        this.color = color;
+        this.shortThereMemory = shortThereMemory;
+    }
 
-    int getWeight();
+    public String getName() {
+        return name;
+    }
 
-    String getColor();
+    public int getWeight() {
+        return weight;
+    }
 
-    boolean hasMemoryLoss();
+    public String getColor() {
+        return color;
+    }
 
-    String status();
+    public void increaseWeight(int amount) {
+        weight += amount;
+    }
 
-    void feed();
+    public boolean hasMemoryLoss() {
+        return shortThereMemory;
+    }
+
+    public String status() {
+        return name + ", weight: " + weight + ", color: " + color + ", short term memory loss: " + hasMemoryLoss();
+    }
+
+    public abstract void feed();
 }

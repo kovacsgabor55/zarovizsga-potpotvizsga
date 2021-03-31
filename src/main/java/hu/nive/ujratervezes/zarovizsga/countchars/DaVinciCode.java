@@ -12,20 +12,22 @@ public class DaVinciCode {
             throw new IllegalArgumentException("invalid seatched character: " + searched);
         }
         try (BufferedReader br = Files.newBufferedReader(Path.of(fileName))) {
-            return counter(br, searched);
+            int count = 0;
+            String line;
+            while ((line = br.readLine()) != null) {
+                count += countCharInLine(line, searched);
+            }
+            return count;
         } catch (IOException e) {
             throw new IllegalArgumentException("Cannot open file: " + fileName, e);
         }
     }
 
-    private int counter(BufferedReader br, char searched) throws IOException {
+    private int countCharInLine(String line, char searched) {
         int count = 0;
-        String line;
-        while ((line = br.readLine()) != null) {
-            for (Character item : line.toCharArray()) {
-                if (item.equals(searched)) {
-                    count++;
-                }
+        for (char item : line.toCharArray()) {
+            if (item == searched) {
+                count++;
             }
         }
         return count;

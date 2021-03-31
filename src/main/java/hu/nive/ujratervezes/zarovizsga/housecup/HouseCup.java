@@ -11,25 +11,22 @@ public class HouseCup {
         this.dataSource = dataSource;
     }
 
-    public int getPointsOfHouse(String houdse) {
+    public int getPointsOfHouse(String house) {
         try (Connection conn = dataSource.getConnection();
-             PreparedStatement stmt = conn.prepareStatement("SELECT `points_earned` FROM `house_points` WHERE `house_name` LIKE ?;")) {
-            stmt.setString(1, houdse);
+             PreparedStatement stmt = conn.prepareStatement("SELECT SUM(`points_earned`) FROM `house_points` WHERE `house_name` = ? GROUP BY `house_name`;")) {
+            stmt.setString(1, house);
             return execute(stmt);
         } catch (SQLException se) {
             throw new IllegalStateException("Cannot connect", se);
         }
     }
 
-    private int execute(PreparedStatement stmt) {
+    private int execute(PreparedStatement stmt) throws SQLException {
         try (ResultSet rs = stmt.executeQuery()) {
-            int point = 0;
-            while (rs.next()) {
-                point += rs.getInt("points_earned");
+            if (rs.next()) {
+                return rs.getInt(1);
             }
-            return point;
-        } catch (SQLException sqle) {
-            throw new IllegalArgumentException("Cannot select house", sqle);
         }
+        throw new IllegalArgumentException("Cannot find house");
     }
 }
